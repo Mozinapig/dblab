@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from web import models
 
-
+##
 # Create your views here.
 # 部门列表
 def depart_list(request):
