@@ -45,7 +45,7 @@ def user_list(request):
 
 from django import forms
 
-
+#Modedlform
 class UserModelForm(forms.ModelForm):
     class Meta:
         model = models.UserInfo
