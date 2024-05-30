@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+    <div class="container">
+        <div style="margin-bottom: 15px" class="clearfix">
+            <a class="btn btn-primary" href="/pretty/add/">靓号添加</a>
+
+            <div style="float: right;width: 300px">
+                <form action="" method="get">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search for..." name="q" value="{{ search_data }}"/>
+                        <span class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+                靓号列表
+            </div>
+            <!-- Table -->
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <td>号码</td>
+                    <td>价格</td>
+                    <td>级别</td>
+                    <td>状态</td>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for obj in queryset %}
+                    <tr>
+                        <th>{{ obj.id }}</th>
+                        <td>{{ obj.mobile }}</td>
+                        <td>{{ obj.price }}</td>
+                        <td>{{ obj.get_level_display }}</td>
+                        <td>{{ obj.get_status_display }}</td>
+                        <td>
+                            <a href="/pretty/{{ obj.id }}/edit/" class="btn btn-success btn-xs">编辑</a>
+                            <a href="/pretty/{{ obj.id }}/delete/" class="btn btn-danger btn-xs">删除</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+{% endblock %}
+
