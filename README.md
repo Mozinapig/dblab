@@ -22,6 +22,12 @@
 #     }
 # }
 ```
+4、执行以下命令生成表：
+```python
+# python manage.py makemigrations
+# python manage.py migrate
+```
+
 ## 页面说明
 ```html
 <!--depart/list/    部门列表-->
