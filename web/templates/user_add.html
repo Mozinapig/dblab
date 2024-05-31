@@ -1,4 +1,10 @@
 {% extends 'layout.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet"
+          href="{% static 'plugins/bootstrap-datepicker-master/dist/css/bootstrap-datepicker.min.css' %}">
+{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -23,4 +29,20 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+
+{% block js %}
+    <script src="{% static 'plugins/bootstrap-datepicker-master/js/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'plugins/bootstrap-datepicker-master/js/locales/bootstrap-datepicker.zh-CN.js' %}"></script>
+    <script>
+        $(function () {
+            $('#id_time').datepicker({
+                format: 'yyyy-mm-dd',
+                language: 'zh-CN',
+                autoclose: true,
+            })
+
+        })
+    </script>
 {% endblock %}

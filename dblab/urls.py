@@ -17,20 +17,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from web import views
+from web.views import depart,user,pretty
 
 urlpatterns = [
     # path("admin/", admin.site.urls),
-    path("depart/list/", views.depart_list),
-    path("depart/add/", views.depart_add),
-    path("depart/delete/", views.depart_delete),
-    path("depart/<int:nid>/edit/", views.depart_edit),
-    path("user/list/", views.user_list),
-    path("user/add/", views.user_add),
-    path("user/<int:nid>/edit/", views.user_edit),
-    path("user/<int:nid>/delete/", views.user_delete),
-    path("pretty/list/", views.pretty_list),
-    path("pretty/add/", views.pretty_add),
-    path("pretty/<int:nid>/edit/", views.pretty_edit),
-    path("pretty/<int:nid>/delete/", views.pretty_delete),
+    path("depart/list/", depart.depart_list),
+    path("depart/add/", depart.depart_add),
+    path("depart/delete/", depart.depart_delete),
+    path("depart/<int:nid>/edit/", depart.depart_edit),
+
+
+    path("user/list/", user.user_list),
+    path("user/add/", user.user_add),
+    path("user/<int:nid>/edit/", user.user_edit),
+    path("user/<int:nid>/delete/", user.user_delete),
+
+
+    path("pretty/list/", pretty.pretty_list),
+    path("pretty/add/", pretty.pretty_add),
+    path("pretty/<int:nid>/edit/", pretty.pretty_edit),
+    path("pretty/<int:nid>/delete/", pretty.pretty_delete),
 
 ]

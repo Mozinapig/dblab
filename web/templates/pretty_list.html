@@ -9,7 +9,8 @@
             <div style="float: right;width: 300px">
                 <form action="" method="get">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for..." name="q" value="{{ search_data }}"/>
+                        <input type="text" class="form-control" placeholder="Search for..." name="q"
+                               value="{{ search_data }}"/>
                         <span class="input-group-btn">
                         <button class="btn btn-default" type="submit">
                             <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
@@ -54,6 +55,12 @@
                 {% endfor %}
                 </tbody>
             </table>
+        </div>
+        <div class="clearfix">
+            <ul class="pagination" style="float: left">
+                {{ page_string }}
+
+            </ul>
         </div>
 
     </div>

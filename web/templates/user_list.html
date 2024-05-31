@@ -29,24 +29,28 @@
                 </thead>
                 <tbody>
                 {% for obj in queryset %}
-                <tr>
-                    <th>{{ obj.id }}</th>
-                    <td>{{ obj.name }}</td>
-                    <td>{{ obj.password }}</td>
-                    <td>{{ obj.age }}</td>
-                    <td>{{ obj.account }}</td>
-                    <td>{{ obj.time|date:'Y-m-d' }}</td>
-                    <td>{{ obj.get_gender_display }}</td>
-                    <td>{{ obj.depart.title }}</td>
-                    <td>
-                        <a href="/user/{{ obj.id }}/edit/" class="btn btn-success btn-xs">编辑</a>
-                        <a href="/user/{{ obj.id }}/delete/" class="btn btn-danger btn-xs">删除</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <th>{{ obj.id }}</th>
+                        <td>{{ obj.name }}</td>
+                        <td>{{ obj.password }}</td>
+                        <td>{{ obj.age }}</td>
+                        <td>{{ obj.account }}</td>
+                        <td>{{ obj.time|date:'Y-m-d' }}</td>
+                        <td>{{ obj.get_gender_display }}</td>
+                        <td>{{ obj.depart.title }}</td>
+                        <td>
+                            <a href="/user/{{ obj.id }}/edit/" class="btn btn-success btn-xs">编辑</a>
+                            <a href="/user/{{ obj.id }}/delete/" class="btn btn-danger btn-xs">删除</a>
+                        </td>
+                    </tr>
                 {% endfor %}
                 </tbody>
             </table>
         </div>
+        <ul class="pagination" style="float: left">
+            {{ page_string }}
+
+        </ul>
 
     </div>
 

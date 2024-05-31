@@ -11,6 +11,7 @@
             border-radius: 0;
         }
     </style>
+    {% block css %}{% endblock %}
 </head>
 <body>
 
@@ -56,5 +57,6 @@
 
 <script src="{% static 'js/jquery-3.7.1.min.js' %}"></script>
 <script src="{% static 'plugins/bootstrap-3.4.1-dist/js/bootstrap.min.js' %}"></script>
+{% block js %}{% endblock %}
 </body>
 </html>
