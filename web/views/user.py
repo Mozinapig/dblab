@@ -10,6 +10,8 @@ from django.shortcuts import render, redirect
 from web import models
 from web.utils.pagination import Pagination
 from web.utils.form import UserModelForm, PrettyModelForm, PrettyEditModelForm
+
+
 # 用户管理
 def user_list(request):
     queryset = models.UserInfo.objects.all()
