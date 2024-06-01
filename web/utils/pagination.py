@@ -8,16 +8,16 @@
 """
 from django.utils.safestring import mark_safe
 
+
 # 自定义分页组件
 class Pagination(object):
     def __init__(self, request, queryset, page_size=10, page_param="page", plus=5):
         import copy
         query_dict = copy.deepcopy(request.GET)
         query_dict._mutable = True
-        self.query_dict=query_dict
+        self.query_dict = query_dict
 
-
-        self.page_param=page_param
+        self.page_param = page_param
         page = request.GET.get(page_param, '1')
         if page.isdecimal():
             page = int(page)
@@ -49,7 +49,7 @@ class Pagination(object):
             else:
                 # 数据库里面数据很多而且当前页面大于5
                 if (self.page + self.plus) > self.total_page_count:
-                    start_page = self.total_page_count - 2 *self.plus
+                    start_page = self.total_page_count - 2 * self.plus
                     end_page = self.total_page_count + 1
                 else:
                     start_page = self.page - self.plus
@@ -59,8 +59,7 @@ class Pagination(object):
 
         # 页码
         page_str_list = []
-        self.query_dict.setlist(self.page_param,[1])
-
+        self.query_dict.setlist(self.page_param, [1])
 
         page_str_list.append('<li><a href="?{}">首页</a></li>'.format(self.query_dict.urlencode()))
         # 上一页

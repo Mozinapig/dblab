@@ -4,7 +4,7 @@
 {% block content %}
     <div class="container">
         <div style="margin-bottom: 15px" class="clearfix">
-            <a class="btn btn-primary" href="#">管理员添加</a>
+            <a class="btn btn-primary" href="/admin/add/">管理员添加</a>
 
             <div style="float: right;width: 300px">
                 <form action="" method="get">
@@ -34,6 +34,7 @@
                     <th>ID</th>
                     <td>用户名</td>
                     <td>密码</td>
+                    <td>重置密码</td>
                     <th>操作</th>
                 </tr>
                 </thead>
@@ -44,8 +45,11 @@
                         <td>{{ obj.username }}</td>
                         <td>*******</td>
                         <td>
-                            <a href="#" class="btn btn-success btn-xs">编辑</a>
-                            <a href="#" class="btn btn-danger btn-xs">删除</a>
+                            <a href="/admin/{{ obj.id }}/reset/">重置密码</a>
+                        </td>
+                        <td>
+                            <a href="/admin/{{ obj.id }}/edit/" class="btn btn-success btn-xs">编辑</a>
+                            <a href="/admin/{{ obj.id }}/delete/" class="btn btn-danger btn-xs">删除</a>
                         </td>
                     </tr>
                 {% endfor %}

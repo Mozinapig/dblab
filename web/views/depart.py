@@ -16,6 +16,7 @@ from web.utils.form import UserModelForm, PrettyModelForm, PrettyEditModelForm
 # Create your views here.
 # 部门列表
 def depart_list(request):
+
     queryset = models.Department.objects.all()
     page_obj = Pagination(request, queryset)
     context = {
