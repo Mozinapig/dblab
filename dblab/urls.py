@@ -22,6 +22,7 @@ from web.views import depart, user, pretty, admin, account
 from django.urls import path, re_path
 from django.views.generic import RedirectView
 
+# 直接访问login
 urlpatterns = [
     # path("admin/", admin.site.urls),
     path('', RedirectView.as_view(url='/login/')),
