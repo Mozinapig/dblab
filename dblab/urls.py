@@ -19,8 +19,12 @@ from django.urls import path
 from web import views
 from web.views import depart, user, pretty, admin, account
 
+from django.urls import path, re_path
+from django.views.generic import RedirectView
+
 urlpatterns = [
     # path("admin/", admin.site.urls),
+    path('', RedirectView.as_view(url='/login/')),
     path("depart/list/", depart.depart_list),
     path("depart/add/", depart.depart_add),
     path("depart/delete/", depart.depart_delete),

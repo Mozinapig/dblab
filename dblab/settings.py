@@ -83,10 +83,10 @@ WSGI_APPLICATION = "dblab.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dblab',  # 数据库名字
-        'USER': 'root',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',  # 本机
+        'NAME': 'admin',  # 数据库名字
+        'USER': 'admin',
+        'PASSWORD': '123123',
+        'HOST': '10.131.64.66',  # 本机
         'PORT': 3306,  # 端口
     }
 }
